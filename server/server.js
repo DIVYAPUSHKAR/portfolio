@@ -9,7 +9,11 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://frontend-xyz.onrender.com', // 🔁 replace with your actual frontend link
+  methods: ['GET', 'POST'],
+}));
+
 app.use(express.json());
 
 // Routes
