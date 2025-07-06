@@ -11,14 +11,14 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contact', form);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/contact`, form);
       alert('Message sent!');
       setForm({ name: '', lastname: '', email: '', message: '' });
     } catch (err) {
       alert('Error sending message');
     }
   };
-
+  
   return (
     <div className="reachme" id="contact">
       <h1>I’d love to hear your feedback!</h1>
