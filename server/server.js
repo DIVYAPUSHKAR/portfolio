@@ -10,9 +10,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://frontend-xyz.onrender.com', // 🔁 replace with your actual frontend link
-  methods: ['GET', 'POST'],
+  origin: 'https://front-pmim.onrender.com',
+  methods: ['GET', 'POST']
 }));
+
 
 app.use(express.json());
 
