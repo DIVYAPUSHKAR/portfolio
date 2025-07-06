@@ -10,11 +10,14 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("🟢 Form submit triggered");  
     try {
       await axios.post(`${process.env.REACT_APP_API_URL}/api/contact`, form);
       alert('Message sent!');
       setForm({ name: '', lastname: '', email: '', message: '' });
     } catch (err) {
+      console.error("❌ Error during axios request:", err); 
+
       alert('Error sending message');
     }
   };
